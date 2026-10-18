@@ -263,3 +263,25 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
+
+                    // LABEL SKILL
+                    Text(
+                        text = stringResource(id = R.string.label_skill),
+                        modifier = Modifier.fillMaxWidth(),
+                        fontSize = dimensionResource(id = R.dimen.label_size).value.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = colorResource(id = R.color.black)
+                    )
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
+
+                    // CHECKBOX SKILL
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        SkillCheckbox(label = stringResource(id = R.string.skill_android), checked = skillAndroid, onCheckedChange = { skillAndroid = it })
+                        SkillCheckbox(label = stringResource(id = R.string.skill_uiux), checked = skillUiUx, onCheckedChange = { skillUiUx = it })
+                        SkillCheckbox(label = stringResource(id = R.string.skill_web), checked = skillWeb, onCheckedChange = { skillWeb = it })
+                    }

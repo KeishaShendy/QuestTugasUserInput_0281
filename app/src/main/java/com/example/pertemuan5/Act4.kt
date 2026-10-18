@@ -326,3 +326,29 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                             fontWeight = FontWeight.SemiBold
                         )
                     }
+                    HorizontalDivider(
+                        modifier = Modifier.padding(
+                            bottom = dimensionResource(id = R.dimen.padding_medium),
+                            top = dimensionResource(id = R.dimen.padding_medium)
+                        ),
+                        thickness = dimensionResource(id = R.dimen.field_border),
+                        color = colorResource(id = R.color.grey_border)
+                    )
+                    ElevatedCard (
+                        elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+                        colors = CardDefaults.cardColors(containerColor = colorResource(id = R.color.black)),
+                        modifier = Modifier
+                            .width(300.dp) // Hapus height agar auto menyesuaikan teks
+                    ) {
+                        Column(modifier = Modifier.padding(horizontal = 12.dp, vertical = 12.dp)) {
+                            Text(text = stringResource(id = R.string.result_nama, savedNama), color = colorResource(id = R.color.white), fontSize = 12.sp)
+                            Text(text = stringResource(id = R.string.result_email, savedEmail), color = colorResource(id = R.color.white), fontSize = 12.sp)
+                            Text(text = stringResource(id = R.string.result_tgl, savedTgl), color = colorResource(id = R.color.white), fontSize = 12.sp)
+                            Text(text = stringResource(id = R.string.result_exp, savedExp), color = colorResource(id = R.color.white), fontSize = 12.sp)
+                            Text(text = stringResource(id = R.string.result_skill, savedSkills), color = colorResource(id = R.color.white), fontSize = 12.sp)
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
+                }
+            }

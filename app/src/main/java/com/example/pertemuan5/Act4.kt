@@ -383,3 +383,33 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
         }
     }
 }
+
+// KOMPONEN CUSTOM TEXTFIELD
+@Composable
+fun CustomTextField(
+    value: String,
+    onValueChange: (String) -> Unit,
+    placeholder: String,
+    modifier: Modifier = Modifier
+) {
+    OutlinedTextField(
+        value = value,
+        onValueChange = onValueChange,
+        placeholder = {
+            Text(
+                text = placeholder,
+                fontSize = dimensionResource(id = R.dimen.label_size).value.sp,
+                color = colorResource(id = R.color.grey_hint)
+            )
+        },
+        singleLine = true,
+        modifier = modifier.height(dimensionResource(id = R.dimen.field_height)),
+        shape = RoundedCornerShape(dimensionResource(id = R.dimen.field_corner)),
+        colors = OutlinedTextFieldDefaults.colors(
+            unfocusedBorderColor = colorResource(id = R.color.grey_border),
+            focusedBorderColor = colorResource(id = R.color.purple_primary),
+            unfocusedContainerColor = Color.Transparent,
+            focusedContainerColor = Color.Transparent
+        )
+    )
+}

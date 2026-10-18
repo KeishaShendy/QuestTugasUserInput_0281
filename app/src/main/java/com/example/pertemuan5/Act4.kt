@@ -104,3 +104,27 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
+            // ====== GAMBAR HEADER ======
+            Image(
+                painter = painterResource(id = R.drawable.bg_header),
+                contentDescription = stringResource(id = R.string.cd_header),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(dimensionResource(id = R.dimen.header_height)),
+                contentScale = ContentScale.Crop
+            )
+
+            // ====== CARD MENGAPUNG ======
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = dimensionResource(id = R.dimen.header_height) - dimensionResource(id = R.dimen.card_overlap))
+                    .padding(horizontal = dimensionResource(id = R.dimen.padding_medium)),
+                shape = RoundedCornerShape(dimensionResource(id = R.dimen.card_corner_radius)),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = dimensionResource(id = R.dimen.card_elevation)
+                ),
+                colors = CardDefaults.cardColors(
+                    containerColor = colorResource(id = R.color.white)
+                )
+            ) {

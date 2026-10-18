@@ -128,3 +128,27 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                     containerColor = colorResource(id = R.color.white)
                 )
             ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(dimensionResource(id = R.dimen.padding_large))
+                        .verticalScroll(rememberScrollState()),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    // TITLE
+                    Text(
+                        text = stringResource(id = R.string.form_title),
+                        fontSize = dimensionResource(id = R.dimen.title_size).value.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = colorResource(id = R.color.purple_primary)
+                    )
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_small)))
+
+                    // SUBTITLE
+                    Text(
+                        text = stringResource(id = R.string.form_subtitle),
+                        fontSize = dimensionResource(id = R.dimen.subtitle_size).value.sp,
+                        color = colorResource(id = R.color.grey_hint),
+                        textAlign = TextAlign.Center
+                    )
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))

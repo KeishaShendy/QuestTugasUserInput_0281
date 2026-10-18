@@ -83,3 +83,12 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
     var savedTgl by remember { mutableStateOf("") }
     var savedExp by remember { mutableStateOf("") }
     var savedSkills by remember { mutableStateOf("") }
+
+    val expOptions = stringArrayResource(id = R.array.experience_options)
+
+    // ==== LOGIKA TOMBOL ====
+    val isFormValid = namaDepan.isNotEmpty() &&
+            email.isNotEmpty() &&
+            tglLahir.isNotEmpty() &&
+            experience.isNotEmpty() &&
+            (skillAndroid || skillUiUx || skillWeb)

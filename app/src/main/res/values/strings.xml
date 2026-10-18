@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pertemuan 5</string>
+
+    <!-- Header & Judul -->
+    <string name="cd_header">Header Biodata</string>
+    <string name="form_title">Form Biodata</string>
+    <string name="form_subtitle">Silahkan isi biodata Anda dibawah ini !!!</string>
+
+    <!-- Label Field -->
+    <string name="hint_nama_depan">Nama Depan</string>
+    <string name="hint_nama_belakang">Nama Belakang</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_tgl_lahir">Tgl Lahir</string>
+    <string name="hint_experience">Experience</string>
+    <string name="cd_icon_calendar">Ikon Kalender</string>
+
+    <!-- Section Skill -->
+    <string name="label_skill">Pilih Skill Anda :</string>
+    <string name="skill_android">Android</string>
+    <string name="skill_uiux">UI/UX</string>
+    <string name="skill_web">Web</string>
+
+    <!-- Teks untuk data skill yang disimpan -->
+    <string name="skill_android_saved">Android</string>
+    <string name="skill_uiux_saved">UI/UX</string>
+    <string name="skill_web_saved">Web</string>

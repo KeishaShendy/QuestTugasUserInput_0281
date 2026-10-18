@@ -76,3 +76,10 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
     var skillAndroid by remember { mutableStateOf(false) }
     var skillUiUx by remember { mutableStateOf(false) }
     var skillWeb by remember { mutableStateOf(false) }
+
+    // ==== State untuk menyimpan data ====
+    var savedNama by remember { mutableStateOf("") }
+    var savedEmail by remember { mutableStateOf("") }
+    var savedTgl by remember { mutableStateOf("") }
+    var savedExp by remember { mutableStateOf("") }
+    var savedSkills by remember { mutableStateOf("") }

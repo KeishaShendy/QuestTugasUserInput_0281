@@ -285,3 +285,44 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                         SkillCheckbox(label = stringResource(id = R.string.skill_uiux), checked = skillUiUx, onCheckedChange = { skillUiUx = it })
                         SkillCheckbox(label = stringResource(id = R.string.skill_web), checked = skillWeb, onCheckedChange = { skillWeb = it })
                     }
+
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
+
+                    HorizontalDivider(
+                        modifier = Modifier.padding(
+                            bottom = dimensionResource(id = R.dimen.padding_medium),
+                            top = dimensionResource(id = R.dimen.padding_medium)
+                        ),
+                        thickness = dimensionResource(id = R.dimen.field_border),
+                        color = colorResource(id = R.color.grey_border)
+                    )
+                    Button(
+                        onClick = {
+                            savedNama = "$namaDepan $namaBelakang"
+                            savedEmail = email
+                            savedTgl = tglLahir
+                            savedExp = experience
+
+                            val skills = mutableListOf<String>()
+                            if (skillAndroid) skills.add("Android")
+                            if (skillUiUx) skills.add("UI/UX")
+                            if (skillWeb) skills.add("Web")
+                            savedSkills = skills.joinToString(", ")
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(dimensionResource(id = R.dimen.button_height)),
+                        shape = RoundedCornerShape(dimensionResource(id = R.dimen.button_corner)),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = colorResource(id = R.color.purple_primary),
+                            contentColor = colorResource(id = R.color.white),
+                            disabledContainerColor = colorResource(id = R.color.grey_disabled),
+                            disabledContentColor = colorResource(id = R.color.grey_text_disabled)
+                        ),
+                        enabled = isFormValid
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.btn_proceed),
+                            fontWeight = FontWeight.SemiBold
+                        )
+                    }

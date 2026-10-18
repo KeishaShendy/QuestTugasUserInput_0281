@@ -17,4 +17,10 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
-                )
+                ) {
+                    FormDataDiri()   // ← nama fungsi tetap sama, isi dari Act4.kt
+                }
+            }
+        }
+    }
+}

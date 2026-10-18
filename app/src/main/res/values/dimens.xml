@@ -27,3 +27,7 @@
     <dimen name="button_height">52dp</dimen>
     <dimen name="button_corner">26dp</dimen>
 
+    <!-- Kotak Hasil (Preview) -->
+    <dimen name="card_result_elevation">10dp</dimen>
+    <dimen name="card_result_padding">16dp</dimen>
+</resources>

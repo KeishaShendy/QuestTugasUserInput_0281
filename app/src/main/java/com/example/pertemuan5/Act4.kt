@@ -152,3 +152,32 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                         textAlign = TextAlign.Center
                     )
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
+
+                    // ROW NAMA
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
+                    ) {
+                        CustomTextField(
+                            value = namaDepan,
+                            onValueChange = { namaDepan = it },
+                            placeholder = stringResource(id = R.string.hint_nama_depan),
+                            modifier = Modifier.weight(1f)
+                        )
+                        CustomTextField(
+                            value = namaBelakang,
+                            onValueChange = { namaBelakang = it },
+                            placeholder = stringResource(id = R.string.hint_nama_belakang),
+                            modifier = Modifier.weight(1f)
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
+
+                    // EMAIL
+                    CustomTextField(
+                        value = email,
+                        onValueChange = { email = it },
+                        placeholder = stringResource(id = R.string.hint_email),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))

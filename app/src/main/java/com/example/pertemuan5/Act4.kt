@@ -246,3 +246,20 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                                     tint = colorResource(id = R.color.black)
                                 )
                             }
+
+                            DropdownMenu(
+                                expanded = expExpanded,
+                                onDismissRequest = { expExpanded = false }
+                            ) {
+                                expOptions.forEach { opt ->
+                                    DropdownMenuItem(
+                                        text = { Text(opt) },
+                                        onClick = {
+                                            experience = opt
+                                            expExpanded = false
+                                        }
+                                    )
+                                }
+                            }
+                        }
+                    }

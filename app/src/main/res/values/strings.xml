@@ -25,3 +25,26 @@
     <string name="skill_android_saved">Android</string>
     <string name="skill_uiux_saved">UI/UX</string>
     <string name="skill_web_saved">Web</string>
+
+    <!-- Button -->
+    <string name="btn_proceed">Proceed</string>
+
+    <!-- Teks untuk Kotak Hasil (Preview) -->
+    <string name="result_nama">Nama : %1$s</string>
+    <string name="result_email">Email : %1$s</string>
+    <string name="result_tgl">Tgl Lahir : %1$s</string>
+    <string name="result_exp">Experience : %1$s</string>
+    <string name="result_skill">Skill : %1$s</string>
+
+    <!-- Teks Dialog DatePicker -->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Batal</string>
+
+    <!-- Pilihan Dropdown Experience -->
+    <string-array name="experience_options">
+        <item>0 - 1 Tahun</item>
+        <item>1 - 3 Tahun</item>
+        <item>3 - 5 Tahun</item>
+        <item>&gt; 5 Tahun</item>
+    </string-array>
+</resources>

@@ -413,3 +413,35 @@ fun CustomTextField(
         )
     )
 }
+
+// KOMPONEN CUSTOM CHECKBOX
+@Composable
+fun SkillCheckbox(
+    label: String,
+    checked: Boolean,
+    onCheckedChange: (Boolean) -> Unit
+) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Checkbox(
+            checked = checked,
+            onCheckedChange = onCheckedChange,
+            modifier = Modifier.size(dimensionResource(id = R.dimen.checkbox_size)),
+            colors = CheckboxDefaults.colors(
+                checkedColor = colorResource(id = R.color.purple_primary),
+                uncheckedColor = colorResource(id = R.color.black)
+            )
+        )
+        Spacer(modifier = Modifier.width(dimensionResource(id = R.dimen.padding_small)))
+        Text(
+            text = label,
+            fontSize = dimensionResource(id = R.dimen.label_size).value.sp,
+            color = colorResource(id = R.color.black)
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun FormDataDiriPreview() {
+    FormDataDiri()
+}

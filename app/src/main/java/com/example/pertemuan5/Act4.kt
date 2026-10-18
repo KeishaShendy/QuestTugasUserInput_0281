@@ -352,3 +352,34 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
                 }
             }
+
+            // DIALOG DATE PICKER
+            if (showDatePicker) {
+                val datePickerState = rememberDatePickerState()
+                DatePickerDialog(
+                    onDismissRequest = { showDatePicker = false },
+                    confirmButton = {
+                        TextButton(
+                            onClick = {
+                                datePickerState.selectedDateMillis?.let { millis ->
+                                    val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                                    tglLahir = formatter.format(Date(millis))
+                                }
+                                showDatePicker = false
+                            }
+                        ) {
+                            Text(text = stringResource(id = R.string.dialog_ok))
+                        }
+                    },
+                    dismissButton = {
+                        TextButton(onClick = { showDatePicker = false }) {
+                            Text(text = stringResource(id = R.string.dialog_cancel))
+                        }
+                    }
+                ) {
+                    DatePicker(state = datePickerState)
+                }
+            }
+        }
+    }
+}

@@ -92,3 +92,15 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
             tglLahir.isNotEmpty() &&
             experience.isNotEmpty() &&
             (skillAndroid || skillUiUx || skillWeb)
+
+    // ==== Scaffold ====
+    Scaffold(
+        containerColor = colorResource(id = R.color.transparent)
+    ) { innerPadding ->
+
+        // Box: supaya Card bisa mengapung di atas Image header
+        Box(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+        ) {

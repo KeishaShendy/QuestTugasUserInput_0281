@@ -181,3 +181,68 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                         modifier = Modifier.fillMaxWidth()
                     )
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
+
+                    // ROW TGL LAHIR & EXPERIENCE
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
+                    ) {
+                        // Tgl Lahir
+                        Box(modifier = Modifier.weight(1f)) {
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(dimensionResource(id = R.dimen.field_height))
+                                    .clip(RoundedCornerShape(dimensionResource(id = R.dimen.field_corner)))
+                                    .border(
+                                        width = dimensionResource(id = R.dimen.field_border),
+                                        color = colorResource(id = R.color.grey_border),
+                                        shape = RoundedCornerShape(dimensionResource(id = R.dimen.field_corner))
+                                    )
+                                    .clickable { showDatePicker = true }
+                                    .padding(horizontal = dimensionResource(id = R.dimen.padding_medium)),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Text(
+                                    text = if (tglLahir.isEmpty()) stringResource(id = R.string.hint_tgl_lahir) else tglLahir,
+                                    fontSize = dimensionResource(id = R.dimen.label_size).value.sp,
+                                    color = colorResource(id = R.color.grey_hint)
+                                )
+                                Icon(
+                                    painter = painterResource(id = R.drawable.ic_calendar),
+                                    contentDescription = stringResource(id = R.string.cd_icon_calendar),
+                                    tint = colorResource(id = R.color.black),
+                                    modifier = Modifier.size(dimensionResource(id = R.dimen.icon_size))
+                                )
+                            }
+                        }
+
+                        // Experience Dropdown
+                        Box(modifier = Modifier.weight(1f)) {
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(dimensionResource(id = R.dimen.field_height))
+                                    .clip(RoundedCornerShape(dimensionResource(id = R.dimen.field_corner)))
+                                    .border(
+                                        width = dimensionResource(id = R.dimen.field_border),
+                                        color = colorResource(id = R.color.grey_border),
+                                        shape = RoundedCornerShape(dimensionResource(id = R.dimen.field_corner))
+                                    )
+                                    .clickable { expExpanded = true }
+                                    .padding(horizontal = dimensionResource(id = R.dimen.padding_medium)),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Text(
+                                    text = if (experience.isEmpty()) stringResource(id = R.string.hint_experience) else experience,
+                                    fontSize = dimensionResource(id = R.dimen.label_size).value.sp,
+                                    color = colorResource(id = R.color.grey_hint)
+                                )
+                                Icon(
+                                    painter = painterResource(id = R.drawable.ic_arrow_drop_down),
+                                    contentDescription = null,
+                                    tint = colorResource(id = R.color.black)
+                                )
+                            }

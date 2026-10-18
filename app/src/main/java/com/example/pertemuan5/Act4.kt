@@ -64,4 +64,15 @@ import java.util.Locale
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormDataDiri(modifier: Modifier = Modifier) {
+    // ==== State input ====
+    var namaDepan by remember { mutableStateOf("") }
+    var namaBelakang by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var tglLahir by remember { mutableStateOf("") }
+    var experience by remember { mutableStateOf("") }
+    var expExpanded by remember { mutableStateOf(false) }
+    var showDatePicker by remember { mutableStateOf(false) }
 
+    var skillAndroid by remember { mutableStateOf(false) }
+    var skillUiUx by remember { mutableStateOf(false) }
+    var skillWeb by remember { mutableStateOf(false) }
